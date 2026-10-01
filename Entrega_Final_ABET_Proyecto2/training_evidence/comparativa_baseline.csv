@@ -1,0 +1,3 @@
+Arquitectura / Metodología,Accuracy (%),F1-Score (%),Observación
+Línea Base: Descriptores Manuales (HOG + SVM),95.29,90.34,Visión clásica (sensible a oleaje y reflejos)
+Propuesto: Red Convolucional (CNN Dron),97.32,94.75,Extracción automática de patrones multiescala

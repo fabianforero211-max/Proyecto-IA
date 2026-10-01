@@ -1,0 +1,9 @@
+Parámetro Mecatrónico,Especificación Técnica
+Arquitectura del Modelo,UAVShipClassifier (ResNet-Mini con Bloques Residuales y Conv 5x5)
+Cantidad de Parámetros,"356,866 parámetros entrenables"
+Tamaño del Archivo en Disco,1.38 MB (Extremadamente compacto)
+Memoria RAM Requerida,< 45 MB en tiempo de ejecución
+Latencia de Inferencia por Muestra,11.99 ms (con TTA Activo)
+Tasa de Procesamiento en Tiempo Real (FPS),> 83 FPS (Supera el estándar de 30 FPS en video)
+Hardware Objetivo Embarcado,Raspberry Pi 5 / NVIDIA Jetson Orin Nano
+Consumo Estimado de Cómputo,Bajo (< 5W en inferencia CPU continua)

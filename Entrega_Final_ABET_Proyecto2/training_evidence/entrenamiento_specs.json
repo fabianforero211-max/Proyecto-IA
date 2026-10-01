@@ -1,0 +1,26 @@
+{
+    "proyecto": "Clasificación de imágenes aéreas para detección de barcos de carga (UAV / Rotterdam)",
+    "asignatura": "Inteligencia Artificial - Ingeniería Mecatrónica",
+    "arquitectura": {
+        "nombre": "UAVShipClassifier (ResNet-Mini con Bloques Residuales)",
+        "capa_preparacion": "Conv2d(3 -> 32, kernel_size=5x5, padding=2, stride=1) + BatchNorm2d + ReLU",
+        "total_parametros_entrenables": 356866,
+        "tamano_disco_mb": 1.38
+    },
+    "hiperparametros_entrenamiento": {
+        "optimizador": "AdamW (Weight Decay = 1e-4)",
+        "tasa_aprendizaje_inicial": 0.001,
+        "programador_lr": "CosineAnnealingLR (T_max = epochs, eta_min = 1e-5)",
+        "funcion_perdida": "CrossEntropyLoss con Label Smoothing (alpha = 0.04)",
+        "tamano_lote_batch_size": 64,
+        "epocas_por_fold": 16,
+        "estrategia_validacion": "Stratified 6-Fold Cross-Validation (85% Train / 15% Val)"
+    },
+    "tecnicas_optimizacion_y_preprocesamiento": [
+        "Adaptación de Dominio (Domain Adaptation) para alta y baja resolución.",
+        "Preprocesamiento con Filtro Gaussiano y normalización de iluminación local (CLAHE).",
+        "Padding a cuadrado estricto (Pad-to-Square) para prevenir deformación geométrica en quillas.",
+        "Aumento de datos (Data Augmentation): Rotaciones espaciales continuas (0°-360°), Volteos H/V, ColorJitter multiespectral y Grayscale estocástico.",
+        "Inferencia en tiempo real con TTA Multidireccional (Test-Time Augmentation a 6 orientaciones)."
+    ]
+}
